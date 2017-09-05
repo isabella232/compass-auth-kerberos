@@ -21,7 +21,10 @@
     "start": "electron ./electron",
     "test": "hadron-build test",
     "test-enzyme": "npm test -- --enzyme",
-    "test-unit": "npm test -- --unit"
+    "test-main": "npm test -- --main",
+    "test-renderer": "npm test -- --renderer",
+    "test-unit": "npm test -- --unit",
+    "test-functional": "npm test -- --functional"
   },
   "precommit": [
     "check"

@@ -7,13 +7,13 @@ const AppRegistry = require('hadron-app-registry');
 
 const entryPoint = require('../../');
 const appRegistry = new AppRegistry();
-const ConnectComponent = require('../../lib/components');
+const Kerberos = require('../../lib/components');
 
 global.hadronApp = app;
 global.hadronApp.appRegistry = appRegistry;
 entryPoint.activate(appRegistry);
 
 ReactDOM.render(
-  React.createElement(ConnectComponent),
+  React.createElement(Kerberos, { currentConnection: {}, isValid: true }),
   document.getElementById('container')
 );

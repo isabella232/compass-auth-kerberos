@@ -4,6 +4,10 @@ Compass Kerberos Plugin
 
 ## Usage
 
+This plugin registers the main component as a `Connect.AuthenticationMethod` role for the
+Compass connect plugin to use. The extensions add functionality to the connect plugin's
+main store.
+
 ### Scripts
 
 `link-plugin`: Links the Compass plugin and Compass for development along with React to ensure the

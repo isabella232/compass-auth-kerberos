@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - 7.4
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libkrb5-dev
+before_script:
+  - npm run check
+script: npm run test
+cache:
+  directories:
+    - $HOME/.electron

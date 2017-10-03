@@ -1,7 +1,7 @@
 {
   "name": "@mongodb-js/compass-auth-kerberos",
   "productName": "Compass Kerberos Auth Role",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides Kerberos Connectivity to the Connection Plugin",
   "main": "index.js",
   "scripts": {

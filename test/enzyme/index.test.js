@@ -13,7 +13,8 @@ describe('<Kerberos />', () => {
       const connection = {
         kerberos_principal: 'principal',
         kerberos_password: 'password',
-        kerberos_service_name: 'service'
+        kerberos_service_name: 'service',
+        kerberos_canonicalize_hostname: false
       };
       const component = mount(
         <Kerberos currentConnection={connection} isValid />
@@ -45,7 +46,8 @@ describe('<Kerberos />', () => {
         const connection = {
           kerberos_principal: '',
           kerberos_password: 'password',
-          kerberos_service_name: 'service'
+          kerberos_service_name: 'service',
+          kerberos_canonicalize_hostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />
@@ -69,7 +71,8 @@ describe('<Kerberos />', () => {
         const connection = {
           kerberos_principal: null,
           kerberos_password: 'password',
-          kerberos_service_name: 'service'
+          kerberos_service_name: 'service',
+          kerberos_canonicalize_hostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />
@@ -92,7 +95,8 @@ describe('<Kerberos />', () => {
       context('when the principal is undefined', () => {
         const connection = {
           kerberos_password: 'password',
-          kerberos_service_name: 'service'
+          kerberos_service_name: 'service',
+          kerberos_canonicalize_hostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />

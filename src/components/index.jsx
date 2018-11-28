@@ -3,6 +3,7 @@ const PropTypes = require('prop-types');
 const isEmpty = require('lodash.isempty');
 const { FormInput } = require('hadron-react-components');
 const { shell } = require('electron');
+const CnameInput = require('./cname-input');
 const Actions = require('../actions');
 
 /**
@@ -83,6 +84,7 @@ class Kerberos extends React.Component {
           name="kerberos-service-name"
           changeHandler={this.onServiceNameChanged.bind(this)}
           value={this.props.currentConnection.kerberos_service_name || ''} />
+        <CnameInput canonicalize_hostname={this.props.currentConnection.kerberos_canonicalize_hostname} />
       </div>
     );
   }

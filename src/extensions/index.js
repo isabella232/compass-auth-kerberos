@@ -30,6 +30,12 @@ function onKerberosServiceNameChanged(name) {
   this.trigger(this.state);
 }
 
+function onCnameToggle() {
+  const connection = this.state.currentConnection;
+  connection.kerberos_canonicalize_hostname = !connection.kerberos_canonicalize_hostname;
+  this.trigger(this.state);
+}
+
 /**
  * When extending the connect plugin, we bind the instance of the store
  * to our functions here, so when our actions are called the changes
@@ -41,10 +47,12 @@ function extendAuthentication(store) {
   const principal = onKerberosPrincipalChanged.bind(store);
   const password = onKerberosPasswordChanged.bind(store);
   const serviceName = onKerberosServiceNameChanged.bind(store);
+  const cName = onCnameToggle.bind(store);
 
   Actions.onKerberosPrincipalChanged.listen(principal);
   Actions.onKerberosPasswordChanged.listen(password);
   Actions.onKerberosServiceNameChanged.listen(serviceName);
+  Actions.onCnameToggle.listen(cName);
 }
 
 module.exports = extendAuthentication;

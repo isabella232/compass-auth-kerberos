@@ -6,7 +6,8 @@ const Reflux = require('reflux');
 const KerberosActions = Reflux.createActions([
   'onKerberosPrincipalChanged',
   'onKerberosPasswordChanged',
-  'onKerberosServiceNameChanged'
+  'onKerberosServiceNameChanged',
+  'onCnameToggle'
 ]);
 
 module.exports = KerberosActions;

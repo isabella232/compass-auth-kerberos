@@ -48,4 +48,15 @@ describe('Extensions', () => {
       Actions.onKerberosServiceNameChanged('sn');
     });
   });
+
+  describe('#onCnameToggle', () => {
+    it('changes the canonicalize host name name in the store', (done) => {
+      const unsubscribe = store.listen((state) => {
+        unsubscribe();
+        expect(state.currentConnection.kerberos_canonicalize_hostname).to.equal(true);
+        done();
+      });
+      Actions.onCnameToggle();
+    });
+  });
 });

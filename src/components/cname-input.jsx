@@ -1,9 +1,14 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const Switch = require('react-ios-switch');
-const Actions = require('../actions');
+import React from 'react';
+import PropTypes from 'prop-types';
+import Switch from 'react-ios-switch';
+import Actions from 'actions';
 
 class CnameInput extends React.PureComponent {
+  static displayName = 'CnameInput';
+
+  static propTypes = {
+    canonicalize_hostname: PropTypes.bool.isRequired
+  }
 
   onCnameToggle() {
     Actions.onCnameToggle();
@@ -23,18 +28,11 @@ class CnameInput extends React.PureComponent {
             onChange={this.onCnameToggle.bind(this)}
             className="form-control-switch"
             onColor="rgb(19, 170, 82)"
-            style={{ backgroundColor: 'rgb(255,255,255)'}}
-            />
+            style={{ backgroundColor: 'rgb(255,255,255)'}} />
         </div>
       </div>
     );
   }
 }
 
-CnameInput.propTypes = {
-  canonicalize_hostname: PropTypes.bool.isRequired
-};
-
-CnameInput.displayName = 'CnameInput';
-
-module.exports = CnameInput;
+export default CnameInput;

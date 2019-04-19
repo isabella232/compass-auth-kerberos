@@ -1,4 +1,4 @@
-const Reflux = require('reflux');
+import Reflux from 'reflux';
 
 /**
  * The actions for changing kerberos values.

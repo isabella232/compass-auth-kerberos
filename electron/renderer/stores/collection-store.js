@@ -1,5 +1,5 @@
 const Reflux = require('reflux');
-const { NamespaceStore } = require('hadron-reflux-store');
+const { NamespaceStore } = require('mongodb-reflux-store');
 
 /**
  * Sets global collection information.
@@ -58,6 +58,9 @@ const CollectionStore = Reflux.createStore({
    */
   isReadonly() {
     return this.collection.readonly;
+  },
+
+  setTabs() {
   }
 });
 

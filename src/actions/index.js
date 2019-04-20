@@ -10,4 +10,4 @@ const KerberosActions = Reflux.createActions([
   'onCnameToggle'
 ]);
 
-module.exports = KerberosActions;
+export default KerberosActions;

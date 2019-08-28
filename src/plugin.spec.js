@@ -6,10 +6,10 @@ describe('<Kerberos />', () => {
   describe('#render', () => {
     context('when the form is valid', () => {
       const connection = {
-        kerberos_principal: 'principal',
-        kerberos_password: 'password',
-        kerberos_service_name: 'service',
-        kerberos_canonicalize_hostname: false
+        kerberosPrincipal: 'principal',
+        kerberosPassword: 'password',
+        kerberosServiceName: 'service',
+        kerberosCanonicalizeHostname: false
       };
       const component = mount(
         <Kerberos currentConnection={connection} isValid />
@@ -39,10 +39,10 @@ describe('<Kerberos />', () => {
     context('when the form is not valid', () => {
       context('when the principal is empty', () => {
         const connection = {
-          kerberos_principal: '',
-          kerberos_password: 'password',
-          kerberos_service_name: 'service',
-          kerberos_canonicalize_hostname: false
+          kerberosPrincipal: '',
+          kerberosPassword: 'password',
+          kerberosServiceName: 'service',
+          kerberosCanonicalizeHostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />
@@ -64,10 +64,10 @@ describe('<Kerberos />', () => {
 
       context('when the principal is null', () => {
         const connection = {
-          kerberos_principal: null,
-          kerberos_password: 'password',
-          kerberos_service_name: 'service',
-          kerberos_canonicalize_hostname: false
+          kerberosPrincipal: null,
+          kerberosPassword: 'password',
+          kerberosServiceName: 'service',
+          kerberosCanonicalizeHostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />
@@ -89,9 +89,9 @@ describe('<Kerberos />', () => {
 
       context('when the principal is undefined', () => {
         const connection = {
-          kerberos_password: 'password',
-          kerberos_service_name: 'service',
-          kerberos_canonicalize_hostname: false
+          kerberosPassword: 'password',
+          kerberosServiceName: 'service',
+          kerberosCanonicalizeHostname: false
         };
         const component = mount(
           <Kerberos currentConnection={connection} />

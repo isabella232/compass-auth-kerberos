@@ -62,7 +62,7 @@ class Kerberos extends React.Component {
    */
   getPrincipalError() {
     const connection = this.props.currentConnection;
-    if (!this.props.isValid && isEmpty(connection.kerberos_principal)) {
+    if (!this.props.isValid && isEmpty(connection.kerberosPrincipal)) {
       return 'Principal is required';
     }
   }
@@ -80,22 +80,22 @@ class Kerberos extends React.Component {
           name="kerberos-principal"
           error={this.getPrincipalError()}
           changeHandler={this.onPrincipalChanged.bind(this)}
-          value={this.props.currentConnection.kerberos_principal || ''}
+          value={this.props.currentConnection.kerberosPrincipal || ''}
           linkHandler={this.onPrincipalHelp.bind(this)} />
         <FormInput
           label="Password"
           name="kerberos-password"
           type="password"
           changeHandler={this.onPasswordChanged.bind(this)}
-          value={this.props.currentConnection.kerberos_password || ''} />
+          value={this.props.currentConnection.kerberosPassword || ''} />
         <FormInput
           label="Service Name"
           placeholder="mongodb"
           name="kerberos-service-name"
           changeHandler={this.onServiceNameChanged.bind(this)}
-          value={this.props.currentConnection.kerberos_service_name || ''} />
+          value={this.props.currentConnection.kerberosServiceName || ''} />
         <CnameInput
-          canonicalize_hostname={this.props.currentConnection.kerberos_canonicalize_hostname || false} />
+          canonicalize_hostname={this.props.currentConnection.kerberosCanonicalizeHostname || false} />
       </div>
     );
   }

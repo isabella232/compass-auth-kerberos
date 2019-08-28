@@ -19,7 +19,7 @@ describe('Extensions', () => {
     it('changes the principal in the store', (done) => {
       const unsubscribe = store.listen((state) => {
         unsubscribe();
-        expect(state.currentConnection.kerberos_principal).to.equal('test');
+        expect(state.currentConnection.kerberosPrincipal).to.equal('test');
         done();
       });
       Actions.onKerberosPrincipalChanged('test');
@@ -30,7 +30,7 @@ describe('Extensions', () => {
     it('changes the password in the store', (done) => {
       const unsubscribe = store.listen((state) => {
         unsubscribe();
-        expect(state.currentConnection.kerberos_password).to.equal('pw');
+        expect(state.currentConnection.kerberosPassword).to.equal('pw');
         done();
       });
       Actions.onKerberosPasswordChanged('pw');
@@ -41,7 +41,7 @@ describe('Extensions', () => {
     it('changes the service name in the store', (done) => {
       const unsubscribe = store.listen((state) => {
         unsubscribe();
-        expect(state.currentConnection.kerberos_service_name).to.equal('sn');
+        expect(state.currentConnection.kerberosServiceName).to.equal('sn');
         done();
       });
       Actions.onKerberosServiceNameChanged('sn');
@@ -52,7 +52,7 @@ describe('Extensions', () => {
     it('changes the canonicalize host name name in the store', (done) => {
       const unsubscribe = store.listen((state) => {
         unsubscribe();
-        expect(state.currentConnection.kerberos_canonicalize_hostname).to.equal(true);
+        expect(state.currentConnection.kerberosCanonicalizeHostname).to.equal(true);
         done();
       });
       Actions.onCnameToggle();

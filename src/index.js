@@ -16,7 +16,7 @@ const KERBEROS_AUTH_ROLE = {
  * @param {AppRegistry} appRegistry - The app registry.
  */
 function activate(appRegistry) {
-  appRegistry.registerRole('Connect.AuthenticationMethod', KERBEROS_AUTH_ROLE);
+  appRegistry.registerRole('Connect.AuthStrategy', KERBEROS_AUTH_ROLE);
   appRegistry.registerRole('Connect.Extension', extension);
 }
 
@@ -26,7 +26,7 @@ function activate(appRegistry) {
  * @param {AppRegistry} appRegistry - The app registry.
  */
 function deactivate(appRegistry) {
-  appRegistry.deregisterRole('Connect.AuthenticationMethod', KERBEROS_AUTH_ROLE);
+  appRegistry.deregisterRole('Connect.AuthStrategy', KERBEROS_AUTH_ROLE);
   appRegistry.deregisterRole('Connect.Extension', extension);
 }
 

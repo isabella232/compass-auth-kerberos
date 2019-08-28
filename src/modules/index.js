@@ -6,7 +6,7 @@ import Actions from 'actions';
  * @param {String} principal - The principal.
  */
 function onKerberosPrincipalChanged(principal) {
-  this.state.currentConnection.kerberos_principal = principal;
+  this.state.currentConnection.kerberosPrincipal = principal;
   this.trigger(this.state);
 }
 
@@ -16,7 +16,7 @@ function onKerberosPrincipalChanged(principal) {
  * @param {String} password - The password.
  */
 function onKerberosPasswordChanged(password) {
-  this.state.currentConnection.kerberos_password = password;
+  this.state.currentConnection.kerberosPassword = password;
   this.trigger(this.state);
 }
 
@@ -26,7 +26,7 @@ function onKerberosPasswordChanged(password) {
  * @param {String} name - The service name.
  */
 function onKerberosServiceNameChanged(name) {
-  this.state.currentConnection.kerberos_service_name = name;
+  this.state.currentConnection.kerberosServiceName = name;
   this.trigger(this.state);
 }
 
@@ -35,7 +35,7 @@ function onKerberosServiceNameChanged(name) {
  */
 function onCnameToggle() {
   const connection = this.state.currentConnection;
-  connection.kerberos_canonicalize_hostname = !connection.kerberos_canonicalize_hostname;
+  connection.kerberosCanonicalizeHostname = !connection.kerberosCanonicalizeHostname;
   this.trigger(this.state);
 }
 

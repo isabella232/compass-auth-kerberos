@@ -26,7 +26,7 @@ class Kerberos extends React.Component {
    * @param {Event} evt - The event.
    */
   onPrincipalChanged(evt) {
-    Actions.onKerberosPrincipalChanged(evt.target.value);
+    Actions.onKerberosPrincipalChanged(evt.target.value.trim());
   }
 
   /**

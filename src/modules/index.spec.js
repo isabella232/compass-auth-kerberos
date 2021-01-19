@@ -26,17 +26,6 @@ describe('Extensions', () => {
     });
   });
 
-  describe('#onKerberosPasswordChanged', () => {
-    it('changes the password in the store', (done) => {
-      const unsubscribe = store.listen((state) => {
-        unsubscribe();
-        expect(state.currentConnection.kerberosPassword).to.equal('pw');
-        done();
-      });
-      Actions.onKerberosPasswordChanged('pw');
-    });
-  });
-
   describe('#onKerberosServiceNameChanged', () => {
     it('changes the service name in the store', (done) => {
       const unsubscribe = store.listen((state) => {

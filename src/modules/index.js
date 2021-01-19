@@ -11,16 +11,6 @@ function onKerberosPrincipalChanged(principal) {
 }
 
 /**
- * Change the kerberos password.
- *
- * @param {String} password - The password.
- */
-function onKerberosPasswordChanged(password) {
-  this.state.currentConnection.kerberosPassword = password;
-  this.trigger(this.state);
-}
-
-/**
  * Change the kerberos service name.
  *
  * @param {String} name - The service name.
@@ -48,12 +38,10 @@ function onCnameToggle() {
  */
 function extendAuthentication(store) {
   const principal = onKerberosPrincipalChanged.bind(store);
-  const password = onKerberosPasswordChanged.bind(store);
   const serviceName = onKerberosServiceNameChanged.bind(store);
   const cName = onCnameToggle.bind(store);
 
   Actions.onKerberosPrincipalChanged.listen(principal);
-  Actions.onKerberosPasswordChanged.listen(password);
   Actions.onKerberosServiceNameChanged.listen(serviceName);
   Actions.onCnameToggle.listen(cName);
 }

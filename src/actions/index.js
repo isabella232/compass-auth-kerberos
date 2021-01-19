@@ -5,7 +5,6 @@ import Reflux from 'reflux';
  */
 const KerberosActions = Reflux.createActions([
   'onKerberosPrincipalChanged',
-  'onKerberosPasswordChanged',
   'onKerberosServiceNameChanged',
   'onCnameToggle'
 ]);

@@ -30,15 +30,6 @@ class Kerberos extends React.Component {
   }
 
   /**
-   * Handle the password change.
-   *
-   * @param {Event} evt - The event.
-   */
-  onPasswordChanged(evt) {
-    Actions.onKerberosPasswordChanged(evt.target.value);
-  }
-
-  /**
    * Handle the service name change.
    *
    * @param {Event} evt - The event.
@@ -82,12 +73,6 @@ class Kerberos extends React.Component {
           changeHandler={this.onPrincipalChanged.bind(this)}
           value={this.props.currentConnection.kerberosPrincipal || ''}
           linkHandler={this.onPrincipalHelp.bind(this)} />
-        <FormInput
-          label="Password"
-          name="kerberos-password"
-          type="password"
-          changeHandler={this.onPasswordChanged.bind(this)}
-          value={this.props.currentConnection.kerberosPassword || ''} />
         <FormInput
           label="Service Name"
           placeholder="mongodb"

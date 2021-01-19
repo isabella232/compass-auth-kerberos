@@ -7,7 +7,6 @@ describe('<Kerberos />', () => {
     context('when the form is valid', () => {
       const connection = {
         kerberosPrincipal: 'principal',
-        kerberosPassword: 'password',
         kerberosServiceName: 'service',
         kerberosCanonicalizeHostname: false
       };
@@ -23,10 +22,6 @@ describe('<Kerberos />', () => {
         expect(component.find('input[name="kerberos-principal"]')).to.have.value('principal');
       });
 
-      it('renders the password input', () => {
-        expect(component.find('input[name="kerberos-password"]')).to.have.value('password');
-      });
-
       it('renders the service name input', () => {
         expect(component.find('input[name="kerberos-service-name"]')).to.have.value('service');
       });
@@ -40,7 +35,6 @@ describe('<Kerberos />', () => {
       context('when the principal is empty', () => {
         const connection = {
           kerberosPrincipal: '',
-          kerberosPassword: 'password',
           kerberosServiceName: 'service',
           kerberosCanonicalizeHostname: false
         };
@@ -65,7 +59,6 @@ describe('<Kerberos />', () => {
       context('when the principal is null', () => {
         const connection = {
           kerberosPrincipal: null,
-          kerberosPassword: 'password',
           kerberosServiceName: 'service',
           kerberosCanonicalizeHostname: false
         };
@@ -89,7 +82,6 @@ describe('<Kerberos />', () => {
 
       context('when the principal is undefined', () => {
         const connection = {
-          kerberosPassword: 'password',
           kerberosServiceName: 'service',
           kerberosCanonicalizeHostname: false
         };
